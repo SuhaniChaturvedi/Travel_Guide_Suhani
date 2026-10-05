@@ -3,21 +3,22 @@ import { motion } from "framer-motion";
 
 import { places } from "../data";
 import places_main from "../assets/places_main.png";
+import ReviewSection from "./ReviewSection";
 
 const Template = () => {
   return (
     <>
       <div className="vh-100" style={{ position: "relative" }}>
         <h1 className="text-white position-absolute top-50 start-50 translate-middle" style={{ fontSize: 130 }}>Places</h1>
-        <img src={places_main} className="object-fit-cover" style={{ width: "100%", height: "100%" }} />
+        <img src={places_main} className="object-fit-cover" style={{ width: "100%", height: "100%" }} alt="Places" />
       </div>
       <div className="d-flex flex-column align-items-center row-gap-4" style={{ backgroundColor: '#2F434A', paddingTop: 50 }}>
         {places.map((place) => (
-          <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
+          <motion.div key={place.name} initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
             <div className="card mb-3" style={{ maxWidth: 900, backgroundColor: '#384040' }}>
               <div className="row g-0" style={{ height: 300 }}>
                 <div className="col-4" style={{ height: "100%" }}>
-                  <img src={place.image} style={{ height: "100%", width: 270 }} className="img-fluid rounded-start" alt="..." />
+                  <img src={place.image} style={{ height: "100%", width: 270 }} className="img-fluid rounded-start" alt={place.name} />
                 </div>
                 <div className="col-8">
                   <div className="card-body">
@@ -28,6 +29,7 @@ const Template = () => {
                 </div>
               </div>
             </div>
+            <ReviewSection placeName={place.name} />
           </motion.div>
         ))}
       </div>
