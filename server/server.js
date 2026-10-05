@@ -108,6 +108,7 @@ app.post("/api/reviews", upload.single("photo"), (req, res) => {
       .json({ error: "place, author, rating and comment are required." });
   }
 
+  
   const ratingNum = parseInt(rating, 10);
   if (isNaN(ratingNum) || ratingNum < 1 || ratingNum > 5) {
     return res
