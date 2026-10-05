@@ -9,7 +9,7 @@ const Template = () => {
     <>
       <div className="vh-100" style={{ position: "relative" }}>
         <h1 className="text-white position-absolute top-50 start-50 translate-middle" style={{ fontSize: 130 }}>Folklore</h1>
-        <img src={dragon} className="object-fit-cover" style={{ width: "100%", height: "100%" }} />
+        <img src={dragon} className="object-fit-cover" style={{ width: "100%", height: "100%" }} alt="Folklore" />
       </div>
       <div className="d-flex flex-column align-items-center row-gap-4" style={{ backgroundColor: '#2F434A', paddingTop: 50 }}>
         {folklores.map((folklore) => (

@@ -11,7 +11,7 @@ const MostVisited = () => {
             <br />
             <motion.div className="d-flex flex-wrap justify-content-around row-gap-5">
                 {locations.map((location, index) => (
-                    <Link to={index==0 ? "japan" : null} style={{ textDecoration: 'none' }}><VisitCard location={location} delay={index} key={index} /></Link>
+                    <Link to={index===0 ? "japan" : null} style={{ textDecoration: 'none' }}><VisitCard location={location} delay={index} key={index} /></Link>
                 ))}
             </motion.div>
         </section>
