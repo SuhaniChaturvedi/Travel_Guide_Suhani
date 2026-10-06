@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const API_BASE = "http://localhost:5001";
+const API_BASE = "https://travelguidesuhani-production.up.railway.app";
 
 // ── Star Rating input ──────────────────────────────────────────────────────────
 const StarRating = ({ value, onChange }) => (
